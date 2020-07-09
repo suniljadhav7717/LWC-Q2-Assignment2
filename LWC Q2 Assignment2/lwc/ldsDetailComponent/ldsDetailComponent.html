@@ -1,0 +1,49 @@
+<template>
+    <lightning-card>
+    <template if:true={isEdit1}>
+        <div class="slds-align_absolute-center">
+                <lightning-layout-item >
+                                <p>Account Name:   {accName}  </p>                     
+                                <br/>
+                                <p>Account Account Number:   {accAccountNumber}  </p>  
+                                <br/>
+                                <p>Account Phone:   {accPhone}  </p>       
+                                <br/>
+                                <p>Account Website:   {accWebsite}  </p>                     
+                                <br/>
+                                <p>Account Industry:   {accIndustry}  </p>       
+                                <br/>
+                </lightning-layout-item>
+            
+      
+                <lightning-button label="Edit" onclick={editHandler}></lightning-button>
+        </br>
+        </div>
+    </template>
+  
+    </lightning-card>
+    <template if:true={isEdit}>
+        <lightning-card title="Update Account Details ..">
+            <lightning-layout>
+                <lightning-layout-item>
+                    <lightning-input label="Account Name" value={accName} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>                        
+                    <br/>
+                    <lightning-input label="Account Number" value={accAccountNumber} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>  
+                    <br/>
+                    <lightning-input label="Account Phone" value={accPhone} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>
+                    <br/>
+                    <lightning-input label="Account Industry" value={accIndustry} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>                        
+                    <br/>
+                    <lightning-input label="Account Website" value={accWebsite} onchange={handleChanges} class="slds-m-bottom_x-small"></lightning-input>
+                    <br/>
+                                        
+                    <div class="slds-col">
+                        <lightning-button onclick={updateAccountRecord}>Save </lightning-button>
+                        <lightning-button  onclick={cancelAccountRecord}>Cancel</lightning-button >
+                    </div>
+                    
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+</template>
